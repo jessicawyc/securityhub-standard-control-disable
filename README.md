@@ -33,7 +33,7 @@ ids=(
 )
 reason='没有使用此服务,可以按需求写'
 ```
-## Step2 CLI命令
+## Step2 CLI命令,不同标准需要修改StandardsSubscriptions[0] to[1],[2]
 ```
 for region in $regions; do
 sarn=$(aws securityhub get-enabled-standards --query 'StandardsSubscriptions[0].StandardsSubscriptionArn' --output text --region=$region)
