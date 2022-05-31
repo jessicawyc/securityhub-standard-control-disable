@@ -6,15 +6,15 @@ you may change the StandardsSubscriptions[0] to[1],[2] to get other standard(dep
 regions:需要执行的所有region
 ids:需要disable的所有control代码
 reason:disable control必须写原因
-### 中国的
+中国的
 ```
 regions=($(aws ec2 describe-regions --query 'Regions[*].RegionName' --region=cn-north-1 --output text))
 ```
-### 海外的
+海外的
 ```
 regions=($(aws ec2 describe-regions --query 'Regions[*].RegionName' --region=us-east-1 --output text))
 ```
-### cis-aws-foundations-benchmark sample
+cis-aws-foundations-benchmark sample
 ```
 ids=(
 '1.1'
@@ -25,7 +25,7 @@ ids=(
 reason='没有root账号,可以按需求写'
 
 ```
-### aws-foundational-security-best-practices sample
+aws-foundational-security-best-practices sample
 ```
 ids=(
 'DynamoDB.1'
