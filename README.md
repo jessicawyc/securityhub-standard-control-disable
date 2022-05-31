@@ -25,7 +25,7 @@ ids=(
 'DynamoDB.1'
 'DynamoDB.2'
 )
-reason='没有root账号,可以按需求写'
+reason='没有使用此服务,可以按需求写'
 ```
 ## Step2 CLI命令
 ```
