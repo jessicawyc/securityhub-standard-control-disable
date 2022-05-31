@@ -22,10 +22,8 @@ reason='没有root账号,可以按需求写'
 ### aws-foundational-security-best-practices
 ```
 ids=(
-'1.1'
-'1.2'
-'1.3'
-'1.4'
+'DynamoDB.1'
+'DynamoDB.2'
 )
 reason='没有root账号,可以按需求写'
 ```
