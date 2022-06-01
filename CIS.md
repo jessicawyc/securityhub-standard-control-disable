@@ -22,6 +22,14 @@ ids=(
 )
 reason='guardduty is enabled'
 ```
+## China Region
+需要将保留此control的region排除,将eu-west-3替换
+```
+ids=(
+'1.1' '3.3' '1.12' 
+)
+reason='no root account in China'
+```
 ## CLI 命令
 ```
 for region in $regions; do
