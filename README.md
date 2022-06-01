@@ -15,7 +15,7 @@ regions=($(aws ec2 describe-regions --query 'Regions[*].RegionName' --output tex
 ```
 
 
-control list 详见可参见[CIS](https://github.com/jessicawyc/securityhub-standard-disable/blob/5e7050b3dc94bfbf590f862fbc2fb09068cfc24d/CIS.md)
+control list 详细分析可参见[CIS](https://github.com/jessicawyc/securityhub-standard-disable/blob/5e7050b3dc94bfbf590f862fbc2fb09068cfc24d/CIS.md)
 ```
 ids=(
 'DynamoDB.1'
