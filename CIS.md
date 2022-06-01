@@ -6,7 +6,7 @@ ids=('2.7')
 reason='CloudTrail trail logs is centrally stored'
 ```
 ## global resource
-需要将保留此control的region排除
+需要将保留此control的region排除,将eu-west-3替换
 ```
 regions=(${regions[*]/eu-west-3}) 
 ids=(
