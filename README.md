@@ -14,13 +14,11 @@ regions=($(aws ec2 describe-regions --query 'Regions[*].RegionName' --region=cn-
 ```
 regions=($(aws ec2 describe-regions --query 'Regions[*].RegionName' --region=us-east-1 --output text))
 ```
-cis-aws-foundations-benchmark sample
+cis-aws-foundations-benchmark https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-cis-to-disable.html
 ```
-ids=(
-'1.1'
-'1.2'
-'1.3'
-'1.4'
+ids=('2.7'
+'1.2''1.3''1.4''1.5''1.6''1.7''1.8''1.9''1.10''1.11''1.12''1.3''1.14''1.16''1.20''1.22''2.5'
+'1.1''3.1''3.2''3.3''3.4''3.5''3.6''3.7''3.8''3.9''3.10''3.11''3.12''3.13''3.14'
 )
 reason='没有root账号,可以按需求写'
 
