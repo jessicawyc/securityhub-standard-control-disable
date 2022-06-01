@@ -9,14 +9,12 @@ regions:需要执行的所有region
 ids:需要disable的所有control代码
 
 reason:disable control必须写原因
-中国的
+
 ```
-regions=($(aws ec2 describe-regions --query 'Regions[*].RegionName' --region=cn-north-1 --output text))
+regions=($(aws ec2 describe-regions --query 'Regions[*].RegionName' --output text))
 ```
-海外的
-```
-regions=($(aws ec2 describe-regions --query 'Regions[*].RegionName' --region=us-east-1 --output text))
-```
+
+
 control list 详见可参见[CIS](https://github.com/jessicawyc/securityhub-standard-disable/blob/5e7050b3dc94bfbf590f862fbc2fb09068cfc24d/CIS.md)
 ```
 ids=(
