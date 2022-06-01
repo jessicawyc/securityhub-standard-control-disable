@@ -2,9 +2,7 @@
 reference from https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-cis-to-disable.html
 ## cloudtrail
 ```
-ids=('2.7'
-'1.1''3.1''3.2''3.3''3.4''3.5''3.6''3.7''3.8''3.9''3.10''3.11''3.12''3.13''3.14'
-)
+ids=('2.7')
 reason='CloudTrail trail logs is centrally stored'
 ```
 ## global resource
@@ -18,8 +16,8 @@ reason='global resource in one region'
 ```
 ## guardduty
 ```
-ids=('2.7'
+ids=(
 '1.1''3.1''3.2''3.3''3.4''3.5''3.6''3.7''3.8''3.9''3.10''3.11''3.12''3.13''3.14'
 )
-reason='CloudTrail trail logs is centrally stored'
+reason='guardduty is enabled'
 ```
