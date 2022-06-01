@@ -3,8 +3,11 @@ multiple region disable some controls for securityhub standards.There are total 
 you may change the StandardsSubscriptions[0] to[1],[2] to get other standard(depends on how many standards you enabled)
 ## Step 1 参数设置
 三个参数:
+
 regions:需要执行的所有region
+
 ids:需要disable的所有control代码
+
 reason:disable control必须写原因
 中国的
 ```
@@ -14,7 +17,7 @@ regions=($(aws ec2 describe-regions --query 'Regions[*].RegionName' --region=cn-
 ```
 regions=($(aws ec2 describe-regions --query 'Regions[*].RegionName' --region=us-east-1 --output text))
 ```
-
+control list 详见可参见[CIS](https://github.com/jessicawyc/securityhub-standard-disable/blob/5e7050b3dc94bfbf590f862fbc2fb09068cfc24d/CIS.md)
 ```
 ids=(
 'DynamoDB.1'
