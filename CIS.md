@@ -24,7 +24,7 @@ ids=(
 reason='guardduty is enabled'
 ```
 ## China Region
-需要将保留此control的region排除,将eu-west-3替换
+中国区特殊的情况没有root账号
 ```
 ids=(
 '1.1' '3.3' '1.12' 
