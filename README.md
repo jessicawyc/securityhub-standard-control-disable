@@ -15,7 +15,9 @@ regions=($(aws ec2 describe-regions --query 'Regions[*].RegionName' --output tex
 ```
 
 
-control list 详细分析可参见[CIS](https://github.com/jessicawyc/securityhub-standard-disable/blob/5e7050b3dc94bfbf590f862fbc2fb09068cfc24d/CIS.md)
+可以disable的controls详细分析可参见文档:
+[CIS.md](https://github.com/jessicawyc/securityhub-standard-disable/blob/5e7050b3dc94bfbf590f862fbc2fb09068cfc24d/CIS.md)
+[FSBP.md](https://github.com/jessicawyc/securityhub-standard-disable/blob/main/FSBP.md)
 ```
 ids=(
 'DynamoDB.1'
