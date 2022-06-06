@@ -2,8 +2,10 @@
 reference from https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-cis-to-disable.html
 ## cloudtrail
 ```
+keepregion=
+regions=(${regions[*]/$keepregion}) 
 ids=('2.7')
-reason='CloudTrail trail logs is centrally stored'
+reason='CloudTrail trail logs is centrally stored in one region one account'
 ```
 ## global resource
 将需要唯一保留的region名称如cn-north-1 或 eu-west-2赋给 keepregion
@@ -13,7 +15,7 @@ regions=(${regions[*]/$keepregion})
 ids=(
 '1.2' '1.3' '1.4' '1.5' '1.6' '1.7' '1.8' '1.9' '1.10' '1.11' '1.12' '1.13' '1.14' '1.16' '1.20' '1.22' '2.5'
 )
-reason='global resource in one region'
+reason='global resource only in one region'
 ```
 ## guardduty
 
