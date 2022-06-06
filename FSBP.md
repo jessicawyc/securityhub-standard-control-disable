@@ -11,6 +11,7 @@ ids=(
 )
 reason='global resource in one region'
 ```
+中国区没有IAM.6,此处会报错,可忽略
 
 ## CLI 命令
 ```
