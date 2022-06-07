@@ -53,4 +53,4 @@ aws securityhub update-standards-control  --standards-control-arn=$arn --control
 done
 done
 ```
-[两个标准重复项对照表](https://github.com/jessicawyc/securityhub-standard-disable/blob/main/similarcontrols.png)
+![两个标准重复项对照表](https://github.com/jessicawyc/securityhub-standard-disable/blob/main/similarcontrols.png)
