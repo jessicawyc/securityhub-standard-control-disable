@@ -37,7 +37,7 @@ reason='no root account in China'
 以下control同时存在于AWS Foundational Security Best Practices standard,可选择只在一个standard中保留
 ```
 ids=(
-'1.2' '1.3' '1.4' '1.5' '1.6' '1.7' '1.8' '1.9' '1.16' '1.22'
+'1.22' '1.16' '1.4' '1.12' '1.2' '1.9' '1.8' '1.9' '1.3' '2.1' '2.7' '2.2' '2.4' '2.5' '4.3'
 )
 reason='duplicated with FSBP'
 ```
