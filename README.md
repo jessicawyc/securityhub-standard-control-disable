@@ -1,4 +1,4 @@
-# securityhub-standard-disable
+# securityhub-standard-control-disable
 multiple region disable some controls for securityhub standards.There are total 3 standards, you must enable standard before to disable some controls.
 you may change the StandardsSubscriptions[0] to[1],[2] to get other standard(depends on how many standards you enabled)
 
