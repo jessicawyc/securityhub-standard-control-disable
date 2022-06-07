@@ -1,6 +1,19 @@
 # AWS Foundational Best Practices
 reference from https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-fsbp-to-disable.html
+## CIS Benchmark重复的control
+```
+ids=(
+'IAM.1' 'IAM.2'
+'IAM.3' 'IAM.4' 'IAM.5' 'IAM.6' 'IAM.7' 'IAM.8' 'Config.1'
+'CloudTrail.1' 
+'CloudTrail.2'
+'CloudTrail.4'
+'CloudTrail.5'
+'EC2.2'
 
+)
+reason='duplicated with CIS'
+```
 ## global resource
 将需要唯一保留的region名称如cn-north-1 或 eu-west-2赋给 keepregion
 ```
@@ -12,6 +25,7 @@ ids=(
 reason='global resource in one region'
 ```
 中国区没有IAM.6,此处会报错,可忽略
+
 
 ## CLI 命令
 ```
