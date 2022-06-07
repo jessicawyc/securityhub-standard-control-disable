@@ -1,13 +1,13 @@
 # cis-aws-foundations-benchmark
 reference from https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-cis-to-disable.html
-## cloudtrail
+## Central Cloudtrail
 ```
 keepregion=
 regions=(${regions[*]/$keepregion}) 
 ids=('2.7')
 reason='CloudTrail trail logs is centrally stored in one region one account'
 ```
-## global resource
+## Global resource
 将需要唯一保留的region名称如cn-north-1 或 eu-west-2赋给 keepregion
 ```
 keepregion=
@@ -17,7 +17,7 @@ ids=(
 )
 reason='global resource only in one region'
 ```
-## guardduty
+## Guardduty
 
 ```
 ids=(
@@ -32,6 +32,14 @@ ids=(
 '1.1' '3.3' '1.12' 
 )
 reason='no root account in China'
+```
+## 与FSBP重复项
+以下control同时存在于AWS Foundational Security Best Practices standard,可选择只在一个standard中保留
+```
+ids=(
+'1.2' '1.3' '1.4' '1.5' '1.6' '1.7' '1.8' '1.9' '1.16' '1.22'
+)
+reason='global resource only in one region'
 ```
 ## CLI 命令
 ```
