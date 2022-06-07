@@ -1,6 +1,6 @@
 # AWS Foundational Best Practices
 reference from https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-fsbp-to-disable.html
-## CIS Benchmark重复的control
+## 与CIS Benchmark重复的control
 ```
 ids=(
 'IAM.1' 'IAM.2'
