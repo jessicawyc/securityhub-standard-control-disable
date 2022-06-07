@@ -1,6 +1,13 @@
 # securityhub-standard-disable
 multiple region disable some controls for securityhub standards.There are total 3 standards, you must enable standard before to disable some controls.
 you may change the StandardsSubscriptions[0] to[1],[2] to get other standard(depends on how many standards you enabled)
+
+针对不同情况,可以选择disable的controls详细分析可和操作请参见各个标准文档:
+
+[CIS.md](https://github.com/jessicawyc/securityhub-standard-disable/blob/main/CIS.md)
+
+[FSBP.md](https://github.com/jessicawyc/securityhub-standard-disable/blob/main/FSBP.md)
+
 ## Step 1 参数设置
 三个参数:
 
@@ -20,11 +27,6 @@ ids=(
 )
 reason='没有使用此服务,可以按需求写'
 ```
-针对不同情况,可以选择disable的controls详细分析可参见文档:
-
-[CIS.md](https://github.com/jessicawyc/securityhub-standard-disable/blob/5e7050b3dc94bfbf590f862fbc2fb09068cfc24d/CIS.md)
-
-[FSBP.md](https://github.com/jessicawyc/securityhub-standard-disable/blob/main/FSBP.md)
 
 ## Step2 CLI命令,不同标准需要修改StandardsSubscriptions[0] to[1],[2]
 ```
