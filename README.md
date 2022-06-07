@@ -13,11 +13,6 @@ reason:disable control必须写原因
 ```
 regions=($(aws ec2 describe-regions --query 'Regions[*].RegionName' --output text))
 ```
-
-
-可以disable的controls详细分析可参见文档:
-[CIS.md](https://github.com/jessicawyc/securityhub-standard-disable/blob/5e7050b3dc94bfbf590f862fbc2fb09068cfc24d/CIS.md)
-[FSBP.md](https://github.com/jessicawyc/securityhub-standard-disable/blob/main/FSBP.md)
 ```
 ids=(
 'DynamoDB.1'
@@ -25,6 +20,12 @@ ids=(
 )
 reason='没有使用此服务,可以按需求写'
 ```
+针对不同情况,可以选择disable的controls详细分析可参见文档:
+
+[CIS.md](https://github.com/jessicawyc/securityhub-standard-disable/blob/5e7050b3dc94bfbf590f862fbc2fb09068cfc24d/CIS.md)
+
+[FSBP.md](https://github.com/jessicawyc/securityhub-standard-disable/blob/main/FSBP.md)
+
 ## Step2 CLI命令,不同标准需要修改StandardsSubscriptions[0] to[1],[2]
 ```
 for region in $regions; do
@@ -37,7 +38,7 @@ aws securityhub update-standards-control  --standards-control-arn=$arn --control
 done
 done
 ```
-## Step3 CLI命令,重新打开disable的control
+## CLI命令,重新打开被disable的control
 ```
 for region in $regions; do
 sarn=$(aws securityhub get-enabled-standards --query 'StandardsSubscriptions[0].StandardsSubscriptionArn' --output text --region=$region)
