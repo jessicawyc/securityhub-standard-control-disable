@@ -39,7 +39,7 @@ reason='no root account in China'
 ids=(
 '1.2' '1.3' '1.4' '1.5' '1.6' '1.7' '1.8' '1.9' '1.16' '1.22'
 )
-reason='global resource only in one region'
+reason='duplicated with FSBP'
 ```
 ## CLI 命令
 ```
