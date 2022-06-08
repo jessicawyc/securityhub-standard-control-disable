@@ -20,6 +20,7 @@ reason='duplicated with CIS'
 keepregion=
 regions=(${regions[*]/$keepregion}) 
 ids=(
+'IAM.1' 'IAM.2' 
 'IAM.3' 'IAM.4' 'IAM.5' 'IAM.6' 'IAM.7' 'IAM.8' 'Config.1'
 )
 reason='global resource in one region'
