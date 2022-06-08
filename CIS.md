@@ -55,11 +55,11 @@ done
 ```
 ## CLI 命令 no region
 ```
-sarn=$(aws securityhub get-enabled-standards --query 'StandardsSubscriptions[0].StandardsSubscriptionArn' --output text --region=$region)
+sarn=$(aws securityhub get-enabled-standards --query 'StandardsSubscriptions[0].StandardsSubscriptionArn' --output text)
 for cid in ${ids[@]}; do
 arn=$sarn'/'$cid
 echo $arn
-aws securityhub update-standards-control  --standards-control-arn=$arn --control-status=DISABLED --disabled-reason=$reason --region=$region
+aws securityhub update-standards-control  --standards-control-arn=$arn --control-status=DISABLED --disabled-reason=$reason 
 done
 ```
 ![两个标准重复项对照表](https://github.com/jessicawyc/securityhub-standard-disable/blob/main/similarcontrols.png)
