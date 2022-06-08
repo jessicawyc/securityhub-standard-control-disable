@@ -2,6 +2,7 @@
 reference from https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-cis-to-disable.html
 ## Central Cloudtrail
 ```
+regions=($(aws ec2 describe-regions --query 'Regions[*].RegionName' --output text))
 keepregion=
 regions=(${regions[*]/$keepregion}) 
 ids=('2.7')
@@ -10,6 +11,7 @@ reason='CloudTrail trail logs is centrally stored in one region one account'
 ## Global resource
 将需要唯一保留的region名称如cn-north-1 或 eu-west-2赋给 keepregion
 ```
+regions=($(aws ec2 describe-regions --query 'Regions[*].RegionName' --output text))
 keepregion=
 regions=(${regions[*]/$keepregion}) 
 ids=(
@@ -20,6 +22,7 @@ reason='global resource only in one region'
 ## Guardduty
 
 ```
+regions=($(aws ec2 describe-regions --query 'Regions[*].RegionName' --output text))
 ids=(
 '1.1' '3.1' '3.2' '3.3' '3.4' '3.5' '3.6' '3.7' '3.8' '3.9' '3.10' '3.11' '3.12' '3.13' '3.14'
 )
@@ -28,6 +31,7 @@ reason='guardduty is enabled'
 ## China Region
 中国区特殊的情况没有root账号
 ```
+regions=($(aws ec2 describe-regions --query 'Regions[*].RegionName' --output text))
 ids=(
 '1.1' '3.3' '1.12' 
 )
@@ -36,6 +40,7 @@ reason='no root account in China'
 ## 与FSBP重复项
 以下control同时存在于AWS Foundational Security Best Practices standard,可选择只在一个standard中保留
 ```
+regions=($(aws ec2 describe-regions --query 'Regions[*].RegionName' --output text))
 ids=(
 '1.22' '1.16' '1.4' '1.12' '1.2' '1.9' '1.8' '1.9' '1.3' '2.1' '2.7' '2.2' '2.4' '2.5' '4.3'
 )
