@@ -2,7 +2,7 @@
 	"Version": "2012-10-17",
 	"Statement": [
 		{
-			"Sid": "Statement1",
+			"Sid": "attachonou",
 			"Effect": "Deny",
 			"Action": [
 				"s3:PutAccountPublicAccessBlock"
