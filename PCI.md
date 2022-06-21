@@ -43,7 +43,7 @@ ids=(
 )
 regions=($(aws ec2 describe-regions --query 'Regions[*].RegionName' --output text))
 regions=(${regions[*]/$keepregion}) 
-keepregion=
+keepregion=cn-north-1
 ```
 
 
