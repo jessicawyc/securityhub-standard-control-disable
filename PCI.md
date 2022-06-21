@@ -11,7 +11,9 @@ reason='no root user in China'
 ```
 ## Self-Choice
 条款本身可供客户选择的,禁用其中未选的
+
 [PCI.IAM.4](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-pci-controls.html#pcidss-iam-1:~:text=resources%20as%20expected.-,%5BPCI.IAM.4%5D%20Hardware%20MFA%20should%20be%20enabled%20for%20the%20root%20user,-Severity%3A%20Critical) Hardware MFA should be enabled for the root user 
+
 [PCI.IAM.5](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-pci-controls.html#pcidss-iam-1:~:text=to%20your%20selection.-,%5BPCI.IAM.5%5D%20Virtual%20MFA%20should%20be%20enabled%20for%20the%20root%20user,-Severity%3A%20Critical)
 Virtual MFA should be enabled for the root user 
 ```
