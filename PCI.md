@@ -5,9 +5,9 @@ reference from https://docs.aws.amazon.com/securityhub/latest/userguide/security
 ```
 regions=($(aws ec2 describe-regions --query 'Regions[*].RegionName' --output text --region=cn-north-1))
 ids=(
-'PCI.IAM.1'
+'PCI.IAM.1','PCI.CW.1','PCI.IAM.4','PCI.IAM.5'
 )
-reason='no root account in China'
+reason='no root user in China'
 ```
 ## Global resource
 将需要唯一保留的region名称如cn-north-1 或 eu-west-2赋给 keepregion
