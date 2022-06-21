@@ -1,6 +1,14 @@
 # Payment Card Industry Data Security Standard (PCI DSS)
 reference from https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-pcidss-to-disable.html
-
+## China Region
+中国区特殊的情况没有root账号
+```
+regions=($(aws ec2 describe-regions --query 'Regions[*].RegionName' --output text --region=cn-north-1))
+ids=(
+'PCI.IAM.1'
+)
+reason='no root account in China'
+```
 ## Global resource
 将需要唯一保留的region名称如cn-north-1 或 eu-west-2赋给 keepregion
 ```
@@ -21,15 +29,7 @@ ids=(
 )
 reason='guardduty is enabled'
 ```
-## China Region
-中国区特殊的情况没有root账号
-```
-regions=($(aws ec2 describe-regions --query 'Regions[*].RegionName' --output text))
-ids=(
-'1.1' '3.3' '1.12' 
-)
-reason='no root account in China'
-```
+
 ## 与FSBP和CIS同时都重复项
 以下control同时存在于AWS Foundational Security Best Practices standard,可选择只在一个standard中保留
 ```
