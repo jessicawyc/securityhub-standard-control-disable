@@ -53,5 +53,5 @@ done
 done
 ```
 ## 三个标准的相似或重复条款对照
-![table](/controls.1.png)
-![table](/controls.2.png)
+![table](/compare.1.png)
+![table](/compare.2.png)
