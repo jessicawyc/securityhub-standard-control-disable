@@ -59,4 +59,5 @@ done
 done
 ```
 
-![两个标准重复项对照表](https://github.com/jessicawyc/securityhub-standard-disable/blob/main/similarcontrols.png)
+
+[三个标准重复项对照表](https://github.com/jessicawyc/securityhub-standard-control-disable#%E4%B8%89%E4%B8%AA%E6%A0%87%E5%87%86%E7%9A%84%E7%9B%B8%E4%BC%BC%E6%88%96%E9%87%8D%E5%A4%8D%E6%9D%A1%E6%AC%BE%E5%AF%B9%E7%85%A7)
