@@ -1,6 +1,7 @@
 # Payment Card Industry Data Security Standard (PCI DSS)
 reference from https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-pcidss-to-disable.html
-## China Region
+## Step 1 参数设置
+### China Region
 中国区特殊的情况没有root账号
 ```
 regions=($(aws ec2 describe-regions --query 'Regions[*].RegionName' --output text --region=cn-north-1))
@@ -9,7 +10,7 @@ ids=(
 )
 reason='no root user in China'
 ```
-## Self-Choice
+### Self-Choice
 条款本身可供客户选择的,禁用其中未选的
 
 [PCI.IAM.4](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-pci-controls.html#pcidss-iam-1:~:text=resources%20as%20expected.-,%5BPCI.IAM.4%5D%20Hardware%20MFA%20should%20be%20enabled%20for%20the%20root%20user,-Severity%3A%20Critical) Hardware MFA should be enabled for the root user 
@@ -30,7 +31,7 @@ ids=(
 )
 reason='guardduty is enabled'
 ```
-## Global resource
+### Global resource
 将需要唯一保留的region名称如cn-north-1 或 eu-west-2赋给 keepregion
 ```
 regions=($(aws ec2 describe-regions --query 'Regions[*].RegionName' --output text))
@@ -43,7 +44,7 @@ reason='global resource only in one region'
 ```
 
 
-## 与FSBP和CIS同时都重复项
+### 与FSBP和CIS同时都重复项
 以下control同时存在于AWS Foundational Security Best Practices standard,可选择只在一个standard中保留
 ```
 regions=($(aws ec2 describe-regions --query 'Regions[*].RegionName' --output text))
@@ -52,7 +53,9 @@ ids=(
 )
 reason='duplicated with FSBP and CIS'
 ```
-## CLI 命令
+
+## 运行CLI 命令
+
 ```
 for region in $regions; do
 sarn=$(aws securityhub get-enabled-standards --query 'StandardsSubscriptions[2].StandardsSubscriptionArn' --output text --region=$region)
