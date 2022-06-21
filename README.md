@@ -52,3 +52,4 @@ aws securityhub update-standards-control  --standards-control-arn=$arn --control
 done
 done
 ```
+## 三个标准的相似或重复条款对照
