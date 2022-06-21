@@ -9,6 +9,24 @@ ids=(
 )
 reason='no root user in China'
 ```
+## Self-Choice
+条款本身可供客户选择的,禁用其中未选的
+[PCI.IAM.4] Hardware MFA should be enabled for the root user (https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-pci-controls.html#pcidss-iam-1:~:text=resources%20as%20expected.-,%5BPCI.IAM.4%5D%20Hardware%20MFA%20should%20be%20enabled%20for%20the%20root%20user,-Severity%3A%20Critical)
+[PCI.IAM.5] Virtual MFA should be enabled for the root user (https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-pci-controls.html#pcidss-iam-1:~:text=to%20your%20selection.-,%5BPCI.IAM.5%5D%20Virtual%20MFA%20should%20be%20enabled%20for%20the%20root%20user,-Severity%3A%20Critical)
+
+```
+ids=(
+'PCI.IAM.4' 或 'PCI.IAM.5' 
+)
+reason='choose between different level control'
+如果选择开启Guardduty则无须使用CI.CW.1,可以禁用
+
+```
+ids=(
+'PCI.CW.1' 或 'PCI.GuardDuty.1'
+)
+reason='guardduty is enabled'
+```
 ## Global resource
 将需要唯一保留的region名称如cn-north-1 或 eu-west-2赋给 keepregion
 ```
@@ -20,15 +38,7 @@ ids=(
 )
 reason='global resource only in one region'
 ```
-## Enable Guardduty
 
-```
-regions=($(aws ec2 describe-regions --query 'Regions[*].RegionName' --output text))
-ids=(
-'PCI.CW.1' 
-)
-reason='guardduty is enabled'
-```
 
 ## 与FSBP和CIS同时都重复项
 以下control同时存在于AWS Foundational Security Best Practices standard,可选择只在一个standard中保留
