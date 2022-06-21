@@ -4,11 +4,12 @@ reference from https://docs.aws.amazon.com/securityhub/latest/userguide/security
 ### China Region
 中国区特殊的情况没有root账号
 ```
+reason='no root user in China'
 regions=($(aws ec2 describe-regions --query 'Regions[*].RegionName' --output text --region=cn-north-1))
 ids=(
 'PCI.IAM.1' 'PCI.CW.1' 'PCI.IAM.4' 'PCI.IAM.5'
 )
-reason='no root user in China'
+
 ```
 ### Self-Choice
 条款本身可供客户选择的,禁用其中未选的
@@ -18,29 +19,31 @@ reason='no root user in China'
 [PCI.IAM.5](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-pci-controls.html#pcidss-iam-1:~:text=to%20your%20selection.-,%5BPCI.IAM.5%5D%20Virtual%20MFA%20should%20be%20enabled%20for%20the%20root%20user,-Severity%3A%20Critical)
 Virtual MFA should be enabled for the root user 
 ```
+reason='choose between different level control'
 ids=(
 'PCI.IAM.4' 或 'PCI.IAM.5' 
 )
-reason='choose between different level control'
+
 ```
 如果选择开启Guardduty则无须使用CI.CW.1,可以禁用
 
 ```
+reason='guardduty is enabled'
 ids=(
 'PCI.CW.1' 或 'PCI.GuardDuty.1'
 )
-reason='guardduty is enabled'
+
 ```
 ### Global resource
 将需要唯一保留的region名称如cn-north-1 或 eu-west-2赋给 keepregion
 ```
-regions=($(aws ec2 describe-regions --query 'Regions[*].RegionName' --output text))
-keepregion=
-regions=(${regions[*]/$keepregion}) 
+reason='global resource only in one region'
 ids=(
 'PCI.IAM.1' 'PCI.IAM.2' 'PCI.IAM.3' 'PCI.IAM.4' 'PCI.IAM.5' 'PCI.IAM.6'
 )
-reason='global resource only in one region'
+regions=($(aws ec2 describe-regions --query 'Regions[*].RegionName' --output text))
+regions=(${regions[*]/$keepregion}) 
+keepregion=
 ```
 
 
