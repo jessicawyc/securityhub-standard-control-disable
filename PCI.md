@@ -21,6 +21,7 @@ ids=(
 'PCI.IAM.4' 或 'PCI.IAM.5' 
 )
 reason='choose between different level control'
+```
 如果选择开启Guardduty则无须使用CI.CW.1,可以禁用
 
 ```
