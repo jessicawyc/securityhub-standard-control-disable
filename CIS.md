@@ -38,7 +38,7 @@ ids=(
 )
 reason='no root account in China'
 ```
-## 与FSBP重复项
+## 与FSBP重复项 Duplicated controls with AFSBP
 以下control同时存在于AWS Foundational Security Best Practices standard,可选择只在一个standard中保留
 The following controls also exist in the AWS Foundational Security Best Practices standard, you can choose to keep only one standard
 ```
@@ -48,7 +48,7 @@ ids=(
 )
 reason='duplicated with FSBP'
 ```
-## CLI 命令
+## CLI 命令 Commands
 ```
 for region in $regions; do
 sarn=$(aws securityhub get-enabled-standards --query 'StandardsSubscriptions[0].StandardsSubscriptionArn' --output text --region=$region)
