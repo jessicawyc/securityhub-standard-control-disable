@@ -10,6 +10,7 @@ reason='CloudTrail trail logs is centrally stored in one region one account'
 ```
 ## Global resource
 将需要唯一保留的region名称如cn-north-1 或 eu-west-2赋给 keepregion
+keepregion is the parameter for the only region you would like to enable the control, all the rest regions will be disabled for the control
 ```
 regions=($(aws ec2 describe-regions --query 'Regions[*].RegionName' --output text))
 keepregion=
@@ -20,7 +21,7 @@ ids=(
 reason='global resource only in one region'
 ```
 ## Guardduty
-
+if you choose to enable Guardduty as compa, then below controls can 
 ```
 regions=($(aws ec2 describe-regions --query 'Regions[*].RegionName' --output text))
 ids=(
@@ -29,7 +30,7 @@ ids=(
 reason='guardduty is enabled'
 ```
 ## China Region
-中国区特殊的情况没有root账号
+中国区特殊的情况没有root账号 As there is no root account in China region
 ```
 regions=($(aws ec2 describe-regions --query 'Regions[*].RegionName' --output text))
 ids=(
@@ -39,6 +40,7 @@ reason='no root account in China'
 ```
 ## 与FSBP重复项
 以下control同时存在于AWS Foundational Security Best Practices standard,可选择只在一个standard中保留
+The following controls also exist in the AWS Foundational Security Best Practices standard, you can choose to keep only one standard
 ```
 regions=($(aws ec2 describe-regions --query 'Regions[*].RegionName' --output text))
 ids=(
